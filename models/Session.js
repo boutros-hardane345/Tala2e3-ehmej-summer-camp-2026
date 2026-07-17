@@ -13,6 +13,6 @@ const sessionSchema = new mongoose.Schema({
   restrictions: { type: String, default: '' },
   notes: { type: String, default: '' },
   sort_order: { type: Number, default: 0 }
-}, { timestamps: true });
+}, { timestamps: true, toJSON: { virtuals: true } });
 
 export default mongoose.model('Session', sessionSchema);

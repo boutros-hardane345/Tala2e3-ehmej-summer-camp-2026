@@ -5,6 +5,6 @@ const registrationSchema = new mongoose.Schema({
   phone: { type: String, required: true },
   age: { type: String, default: '' },
   notes: { type: String, default: '' }
-}, { timestamps: true });
+}, { timestamps: true, toJSON: { virtuals: true } });
 
 export default mongoose.model('Registration', registrationSchema);
