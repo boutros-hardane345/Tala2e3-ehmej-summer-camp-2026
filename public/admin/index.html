@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الإدارة | جدول المخيم</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<nav style="background:var(--grad-crimson);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:0.9rem 5%;position:sticky;top:0;z-index:1000;box-shadow:0 4px 24px rgba(74,0,0,0.35);border-bottom:2px solid rgba(201,168,76,0.40);">
+  <div style="display:flex;align-items:center;gap:0.7rem;">
+    <img src="../logo.jpg" alt="Logo" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-pale);">
+    <h1 style="font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--gold-pale);text-shadow:0 1px 3px rgba(0,0,0,0.4);">⚙️ لوحة التحكم</h1>
+  </div>
+  <ul style="display:flex;gap:0.25rem;list-style:none;align-items:center;">
+    <li><a href="../index.html" style="color:rgba(255,255,255,0.88);text-decoration:none;font-weight:600;font-size:0.95rem;padding:0.55rem 1.1rem;border-radius:8px;transition:all 0.35s var(--ease);position:relative;">← عرض الجدول</a></li>
+  </ul>
+</nav>
+
+<!-- Login Section -->
+<section class="login-section" id="loginSection">
+  <div class="login-card">
+    <span class="lock-icon">🔐</span>
+    <h2>تسجيل الدخول</h2>
+    <p>أدخل اسم المستخدم وكلمة السر</p>
+    <div class="input-group">
+      <label>اسم المستخدم</label>
+      <input type="text" id="usernameInput" placeholder="admin" autofocus />
+    </div>
+    <div class="input-group">
+      <label>كلمة السر</label>
+      <div class="password-wrap">
+        <input type="password" id="passwordInput" placeholder="••••••••" />
+        <button type="button" class="toggle-password" id="togglePassword" aria-label="إظهار/إخفاء كلمة السر">👁️</button>
+      </div>
+    </div>
+    <button class="btn-login" id="loginBtn">دخول</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</section>
+
+<!-- Dashboard Section -->
+<div class="dash-container" id="dashboardSection" style="display:none;">
+  <div class="dash-header">
+    <h1>⚙️ إدارة جدول المخيم</h1>
+    <div class="inline-flex">
+      <button class="logout-btn" id="logoutBtn">🔒 خروج</button>
+    </div>
+  </div>
+
+  <div class="success-msg" id="successMsg"></div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" data-tab="add">➕ إضافة</button>
+    <button class="tab-btn" data-tab="list">📋 جميع الفعاليات</button>
+    <button class="tab-btn" data-tab="feedback">📨 الملاحظات</button>
+    <button class="tab-btn" data-tab="registrations">📝 التسجيلات</button>
+  </div>
+
+  <!-- Add / Edit Tab -->
+  <div class="tab-content active" id="tab-add">
+    <div class="dash-card">
+      <h3 id="formTitle">➕ إضافة فعالية جديدة</h3>
+      <div class="form-row three">
+        <div class="form-group">
+          <label>اليوم</label>
+          <select id="sessionDay">
+            <option value="الثلاثاء">الثلاثاء ٢٥ آب</option>
+            <option value="الأربعاء">الأربعاء ٢٦ آب</option>
+            <option value="الخميس">الخميس ٢٧ آب</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>من الساعة</label>
+          <input type="time" id="sessionTimeStart" value="09:00" />
+        </div>
+        <div class="form-group">
+          <label>إلى الساعة</label>
+          <input type="time" id="sessionTimeEnd" value="10:00" />
+        </div>
+      </div>
+      <div class="form-row two">
+        <div class="form-group">
+          <label>اسم النشاط</label>
+          <input type="text" id="sessionName" placeholder="مثال: صلاة الفجر" />
+        </div>
+        <div class="form-group">
+          <label>التصنيف</label>
+          <select id="sessionCategory">
+            <option value="صلاة" style="color:#2C6E2F;">🟢 صلاة</option>
+            <option value="وجبة" style="color:#E67E22;">🟠 وجبة</option>
+            <option value="موضوع" style="color:#E74C3C;">🔴 موضوع</option>
+            <option value="مشغل" style="color:#8E44AD;">🟣 مشغل</option>
+            <option value="ألعاب" style="color:#2980B9;">🔵 ألعاب</option>
+          </select>
+        </div>
+      </div>
+      <div class="frm-actions">
+        <button class="dash-btn primary" id="saveBtn">💾 حفظ</button>
+        <button class="dash-btn secondary" id="cancelBtn" style="display:none;">❌ إلغاء</button>
+        <input type="hidden" id="editId" value="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- List Tab -->
+  <div class="tab-content" id="tab-list">
+    <div class="dash-card">
+      <div class="inline-flex" style="justify-content:space-between;width:100%;flex-wrap:wrap;margin-bottom:1rem;">
+        <h3 style="margin-bottom:0;">📋 جميع الفعاليات</h3>
+        <button class="dash-btn secondary small" id="refreshBtn">🔄 تحديث</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>اليوم</th>
+              <th>الوقت</th>
+              <th>النشاط</th>
+              <th>التصنيف</th>
+              <th>إجراء</th>
+            </tr>
+          </thead>
+          <tbody id="sessionsBody">
+            <tr><td colspan="6" class="loading-text">جاري التحميل...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Tab -->
+  <div class="tab-content" id="tab-feedback">
+    <div class="dash-card">
+      <div class="inline-flex" style="justify-content:space-between;width:100%;flex-wrap:wrap;margin-bottom:1rem;">
+        <h3 style="margin-bottom:0;">📨 ملاحظات المشاركين</h3>
+        <button class="dash-btn secondary small" id="refreshFeedbackBtn">🔄 تحديث</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>الاسم</th>
+              <th>التقييم</th>
+              <th>الملاحظة</th>
+              <th>التاريخ</th>
+              <th>إجراء</th>
+            </tr>
+          </thead>
+          <tbody id="feedbackBody">
+            <tr><td colspan="6" class="loading-text">جاري التحميل...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registrations Tab -->
+  <div class="tab-content" id="tab-registrations">
+    <div class="dash-card">
+      <div class="inline-flex" style="justify-content:space-between;width:100%;flex-wrap:wrap;margin-bottom:1rem;">
+        <h3 style="margin-bottom:0;">📝 المشاركون المسجلون</h3>
+        <button class="dash-btn secondary small" id="refreshRegBtn">🔄 تحديث</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>الاسم</th>
+              <th>الهاتف</th>
+              <th>العمر</th>
+              <th>ملاحظات</th>
+              <th>تاريخ التسجيل</th>
+              <th>إجراء</th>
+            </tr>
+          </thead>
+          <tbody id="registrationsBody">
+            <tr><td colspan="7" class="loading-text">جاري التحميل...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--crimson-deep);color:rgba(255,255,255,0.75);text-align:center;padding:2rem;margin-top:auto;position:relative;overflow:hidden;">
+  <div style="content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-gold);"></div>
+  <p>© ٢٠٢٦ طلائع مار شربل – جميع الحقوق محفوظة</p>
+</footer>
+
+<script>var API_URL = '';</script>
+<script src="admin.js"></script>
+</body>
+</html>

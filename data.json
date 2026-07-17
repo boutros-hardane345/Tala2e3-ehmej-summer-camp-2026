@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "day": "الثلاثاء",
+    "date": "25",
+    "time_start": "16:00",
+    "time_end": "16:20",
+    "activity_name": "الوصول وتوضيب الأغراض",
+    "responsible_person": "",
+    "category": "وقت حر",
+    "notes": "",
+    "sort_order": 0,
+    "created_at": "2026-07-16T07:05:28.512Z",
+    "updated_at": "2026-07-16T07:05:28.512Z"
+  },
+  {
+    "id": 2,
+    "day": "الثلاثاء",
+    "date": "25",
+    "time_start": "20:00",
+    "time_end": "20:30",
+    "activity_name": "عشاء",
+    "responsible_person": "",
+    "category": "وجبة",
+    "notes": "",
+    "sort_order": 0,
+    "created_at": "2026-07-16T07:06:17.133Z",
+    "updated_at": "2026-07-16T07:06:17.133Z"
+  }
+]

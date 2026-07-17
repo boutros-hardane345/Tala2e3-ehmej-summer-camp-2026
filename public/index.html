@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المخيم الصيفي | طلائع إهمج</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <h1>المخيم الصيفي لطلائع إهمج</h1>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">الرئيسية</a></li>
+    <li><a href="admin/index.html">الإدارة</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <img src="chi3ar2026.png" alt="Logo2" class="logo2">
+    <div class="hero-content">
+      <h2>إفتح... إنّه يقرع !!</h2>
+      <h3> ٢٥ – ٢٦ – ٢٧ آب ٢٠٢٦</h3>
+      <p>ثلاثة أيام من المحبة، الفرح، والعطاء</p>
+    </div>
+  </div>
+</div>
+
+<section class="section section-full">
+  <div class="section-title">المكان والزمان</div>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-icon">📍</div>
+      <h4>المكان</h4>
+      <p>دير إم الله، يانوح</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📅</div>
+      <h4>التاريخ</h4>
+      <p>٢٥ – ٢٧ آب ٢٠٢٦</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🕐</div>
+      <h4>موعد الوصول</h4>
+      <p class="info-day">الثلاثاء ٢٥ آب</p>
+      <p class="info-time">الساعة ٦:٠٠ مساءً</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🏁</div>
+      <h4>موعد الانتهاء</h4>
+      <p class="info-day">الخميس ٢٧ آب</p>
+      <p class="info-time">الساعة ٤:٠٠ عصرًا</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-full">
+  <div class="section-title">التسجيل في المخيم</div>
+  <div class="register-card">
+    <form id="registerForm">
+      <div class="register-row">
+        <div class="form-group">
+          <label for="regName">الاسم الكامل</label>
+          <input type="text" id="regName" placeholder="اسمك الثلاثي" required />
+        </div>
+        <div class="form-group">
+          <label for="regPhone">رقم الهاتف</label>
+          <input type="tel" id="regPhone" placeholder="رقم هاتف ولي الأمر" required />
+        </div>
+      </div>
+      <div class="register-row">
+        <div class="form-group">
+          <label for="regAge">العمر</label>
+          <input type="number" id="regAge" placeholder="العمر" min="1" />
+        </div>
+        <div class="form-group">
+          <label for="regNotes">ملاحظات (اختياري)</label>
+          <input type="text" id="regNotes" placeholder="حساسية، أدوية، ملاحظات..." />
+        </div>
+      </div>
+      <button type="submit" class="btn-submit">تسجيل</button>
+    </form>
+    <div id="registerSuccess" class="feedback-success" style="display:none;"></div>
+  </div>
+</section>
+
+<section class="section section-full">
+  <div class="section-title">قوانين المخيم</div>
+  <ul class="info-list">
+    <li>الالتزام بمواعيد الفعاليات والبرنامج اليومي.</li>
+    <li>احترام المرشدين والمشرفين والتعاون معهم.</li>
+    <li>المحافظة على نظافة المكان والممتلكات.</li>
+    <li>التأني في استعمال الهاتف المحمول وفق التعليمات.</li>
+    <li>عدم الخروج عن نطاق المخيم بدون إذن.</li>
+    <li>روح المحبة والتعاون بين جميع المشاركين.</li>
+  </ul>
+</section>
+
+<section class="section section-full">
+  <div class="section-title">الأدوات المطلوبة</div>
+  <ul class="info-list">
+    <li>حقيبة نوم (Sleeping bag) وفراش.</li>
+    <li>ألبسة مناسبة للطقس (صيفي + كنزة خفيفة).</li>
+    <li>أدوات نظافة شخصية (صابون، فرشاة أسنان، منشفة...).</li>
+    <li>كتاب الصلاة أو التسبحة.</li>
+    <li>مفكرة وقلم.</li>
+    <li>قارورة ماء.</li>
+    <li>مصباح يدوي.</li>
+    <li>أدوية شخصية إذا لزم الأمر.</li>
+  </ul>
+</section>
+
+<section class="section section-full">
+  <div class="section-title">برنامج المخيم</div>
+  <div class="schedule-grid" id="scheduleGrid">
+    <div class="day-column">
+      <div class="day-header">
+        <h3>الثلاثاء ٢٥ آب ٢٠٢٦</h3>
+      </div>
+      <div class="day-sessions" id="day-الثلاثاء">
+        <div class="empty-day">جاري التحميل...</div>
+      </div>
+    </div>
+    <div class="day-column">
+      <div class="day-header">
+        <h3>الأربعاء ٢٦ آب ٢٠٢٦</h3>
+      </div>
+      <div class="day-sessions" id="day-الأربعاء">
+        <div class="empty-day">جاري التحميل...</div>
+      </div>
+    </div>
+    <div class="day-column">
+      <div class="day-header">
+        <h3>الخميس ٢٧ آب ٢٠٢٦</h3>
+      </div>
+      <div class="day-sessions" id="day-الخميس">
+        <div class="empty-day">جاري التحميل...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section feedback-section">
+  <div class="section-title">شاركنا رأيك</div>
+  <div class="feedback-card">
+    <p class="feedback-desc">نود معرفة انطباعك عن المخيم! اترك ملاحظاتك لمساعدتنا على التحسين.</p>
+    <form id="feedbackForm">
+      <div class="feedback-row">
+        <div class="form-group">
+          <label for="feedbackName">الاسم (اختياري)</label>
+          <input type="text" id="feedbackName" placeholder="اسمك" />
+        </div>
+        <div class="form-group">
+          <label>التقييم</label>
+          <div class="star-rating" id="starRating">
+            <span class="star" data-value="1">☆</span>
+            <span class="star" data-value="2">☆</span>
+            <span class="star" data-value="3">☆</span>
+            <span class="star" data-value="4">☆</span>
+            <span class="star" data-value="5">☆</span>
+          </div>
+          <input type="hidden" id="feedbackRating" value="0" />
+        </div>
+      </div>
+      <div class="form-group full">
+        <label for="feedbackMessage">ملاحظاتك</label>
+        <textarea id="feedbackMessage" placeholder="اكتب ملاحظاتك هنا..." required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">إرسال</button>
+    </form>
+    <div id="feedbackSuccess" class="feedback-success" style="display:none;"></div>
+  </div>
+</section>
+
+<footer>
+  <p>© ٢٠٢٦ طلائع إهمج – جميع الحقوق محفوظة</p>
+</footer>
+
+<script>var API_URL = '';</script>
+<script src="script.js"></script>
+</body>
+</html>
