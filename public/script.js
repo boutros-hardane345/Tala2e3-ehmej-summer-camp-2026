@@ -5,6 +5,11 @@
     'موضوع': { border: '#E74C3C', bg: '#E74C3C', label: 'موضوع' },
     'مشغل': { border: '#8E44AD', bg: '#8E44AD', label: 'مشغل' },
     'ألعاب': { border: '#2980B9', bg: '#2980B9', label: 'ألعاب' },
+    'وصول': { border: '#E91E63', bg: '#E91E63', label: 'وصول' },
+    'انطلاق': { border: '#4CAF50', bg: '#4CAF50', label: 'انطلاق' },
+    'رسالة': { border: '#3F51B5', bg: '#3F51B5', label: 'رسالة' },
+    'سهرة': { border: '#673AB7', bg: '#673AB7', label: 'سهرة' },
+    'وقت حرّ': { border: '#009688', bg: '#009688', label: 'وقت حرّ' },
   };
 
   function toArabicNum(n) {

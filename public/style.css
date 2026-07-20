@@ -565,6 +565,21 @@ nav h1 {
 .cat-ألعاب { border-right-color: #2980B9; }
 .cat-ألعاب .category-badge { background: #2980B9; color: white; }
 
+.cat-وصول { border-right-color: #E91E63; }
+.cat-وصول .category-badge { background: #E91E63; color: white; }
+
+.cat-انطلاق { border-right-color: #4CAF50; }
+.cat-انطلاق .category-badge { background: #4CAF50; color: white; }
+
+.cat-رسالة { border-right-color: #3F51B5; }
+.cat-رسالة .category-badge { background: #3F51B5; color: white; }
+
+.cat-سهرة { border-right-color: #673AB7; }
+.cat-سهرة .category-badge { background: #673AB7; color: white; }
+
+.cat-وقت_حرّ { border-right-color: #009688; }
+.cat-وقت_حرّ .category-badge { background: #009688; color: white; }
+
 .empty-day {
   text-align: center;
   color: var(--text-light);
