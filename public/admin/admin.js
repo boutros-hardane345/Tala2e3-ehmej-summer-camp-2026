@@ -330,7 +330,7 @@
           html += '<tr>' +
             '<td>' + (i + 1) + '</td>' +
             '<td>' + (f.name || 'بدون اسم') + '</td>' +
-            '<td style="color:var(--gold-bright);font-size:1.1rem;">' + stars + '</td>' +
+            '<td style="color:var(--accent-bright);font-size:1.1rem;">' + stars + '</td>' +
             '<td>' + f.message + '</td>' +
             '<td>' + new Date(f.createdAt).toLocaleDateString('ar-LB') + '</td>' +
             '<td><button class="dash-btn danger small delete-feedback-btn" data-id="' + f.id + '">🗑️ حذف</button></td>' +

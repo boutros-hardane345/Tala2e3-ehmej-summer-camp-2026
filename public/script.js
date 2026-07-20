@@ -69,8 +69,8 @@
   // ----- Star rating -----
   var stars = document.querySelectorAll('.star-rating .star');
   var ratingInput = document.getElementById('feedbackRating');
-  var goldColor = '#E8C85A';
-  var grayColor = '#D4CCBF';
+  var goldColor = '#FFB74D';
+  var grayColor = '#B8D0D2';
 
   function updateStars(value) {
     stars.forEach(function (s) {
